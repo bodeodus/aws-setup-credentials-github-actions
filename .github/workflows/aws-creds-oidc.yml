@@ -8,9 +8,8 @@ jobs:
     steps:
       - uses: aws-actions/configure-aws-credentials@v2
         with:
-         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
          aws_region: us-west-2
+         role-to-assume: arn:aws:iam::084963261788:role/github-actions-oidc
       - run: 
          Install-Modules -Name AWS.Tools.EC2 -Force
          Get-EC2Vpc
