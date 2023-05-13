@@ -14,7 +14,7 @@ jobs:
          aws-region: eu-west-1
          role-to-assume: arn:aws:iam::084963261788:role/github-actions-oidc
       - run: 
-         Install-Modules -Name AWS.Tools.EC2 -Force
+         Install-Module -Name AWS.Tools.EC2 -Force
          Get-EC2Vpc
         shell: pwsh
       
