@@ -1,6 +1,9 @@
 on:
   workflow_dispatch:
   push:
+  
+permissions:
+  id-token: write
 
 jobs:
   job1:
@@ -8,7 +11,7 @@ jobs:
     steps:
       - uses: aws-actions/configure-aws-credentials@v2
         with:
-         aws_region: us-west-2
+         aws-region: eu-west-1
          role-to-assume: arn:aws:iam::084963261788:role/github-actions-oidc
       - run: 
          Install-Modules -Name AWS.Tools.EC2 -Force
